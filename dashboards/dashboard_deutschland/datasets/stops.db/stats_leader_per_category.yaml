@@ -1,0 +1,101 @@
+table_name: stats_leader_per_category
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: main
+sql: "WITH current_match_stats AS \n(SELECT *\n  FROM match_stats m\n  WHERE run_id=\
+  \ (SELECT max(run_id) FROM match_meta_data)),\n stops_total AS\n(SELECT district,\
+  \ SUM(value) anzahl_ohne_unbedient\n  FROM current_match_stats cm\n  WHERE key NOT\
+  \ in ('NO_MATCH_AND_SEEMS_UNSERVED')\n  GROUP BY district),\n relativ_match_stats\
+  \ AS\n(SELECT cm.district, cm.key, cm.value, cm.value*100.0/st.anzahl_ohne_unbedient\
+  \ rel_value\n  FROM current_match_stats cm\n  JOIN stops_total st ON cm.district\
+  \ = st.district)\n\nSELECT v.bez|| ' ' || v.gen \"Kreis\", a.district \"DIHD-Pr\xE4\
+  fix\", a.key \"Kategorie\", a.value \"Anzahl\", round(a.rel_value, 2) \"Anteil\"\
+  \n  FROM (SELECT s.district, s.key, s.value, s.rel_value,\n               ROW_NUMBER()\
+  \ OVER (PARTITION BY s.key ORDER BY s.rel_value DESC) ranked_order\n          FROM\
+  \ relativ_match_stats s\n          WHERE key NOT in ('NO_MATCH_AND_SEEMS_UNSERVED'))\
+  \ a\n  JOIN vg250_krs v ON v.AGS = substr(a.district,4)\n WHERE a.ranked_order =\
+  \ 1"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 31d4dcc1-2f7b-46e2-b12f-daa242e2eed9
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: "DIHD-Pr\xE4fix"
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: Anteil
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: Anzahl
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: Kategorie
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: Kreis
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: d6ba2162-42cf-426e-bcae-7e913b25908c

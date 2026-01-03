@@ -1,0 +1,230 @@
+dashboard_title: zHV/OSM Vergleich Kreisebene
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: 99655f62-afea-4618-bf55-41c09fef71b4
+position:
+  CHART-eEXRC55aXc:
+    children: []
+    id: CHART-eEXRC55aXc
+    meta:
+      chartId: 1
+      height: 50
+      sliceName: "Ver\xE4nderung zur Vorwoche"
+      uuid: 933f4176-d3f2-4418-b312-0c6a9187c64b
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pcoTCriaoa
+    type: CHART
+  CHART-explore-2-1:
+    children: []
+    id: CHART-explore-2-1
+    meta:
+      chartId: 2
+      height: 50
+      sliceName: Abgleichergebnisse nach Kategorie
+      uuid: 0ecead08-4718-4e12-be10-cebc17ff7f4c
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-cbxxaGAA13
+    type: CHART
+  CHART-explore-3-1:
+    children: []
+    id: CHART-explore-3-1
+    meta:
+      chartId: 3
+      height: 50
+      sliceName: Zeitliche Entwicklung nach Kategorie
+      uuid: 1eb88654-7728-4c2f-8350-1197d81d5249
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-cbxxaGAA13
+    type: CHART
+  CHART-explore-5-1:
+    children: []
+    id: CHART-explore-5-1
+    meta:
+      chartId: 4
+      height: 50
+      sliceName: Anzahl Haltestellen nach Abweichung OSM/zHV
+      uuid: 829af42e-6d27-470b-a2b0-24009a734a6c
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-cbxxaGAA13
+    type: CHART
+  CHART-explore-8-1:
+    children: []
+    id: CHART-explore-8-1
+    meta:
+      chartId: 5
+      height: 50
+      sliceName: Karte der Matchergebnisse
+      uuid: 20d00306-309f-4185-b56f-f8a9618ef321
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-SIqicEk8nH
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-pcoTCriaoa
+    - ROW-cbxxaGAA13
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: zHV/OSM Vergleich Kreisebene
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-cbxxaGAA13:
+    children:
+    - CHART-explore-2-1
+    - CHART-explore-3-1
+    - CHART-explore-5-1
+    id: ROW-cbxxaGAA13
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-pcoTCriaoa:
+    children:
+    - CHART-eEXRC55aXc
+    - CHART-explore-8-1
+    id: ROW-pcoTCriaoa
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  chart_configuration:
+    '1':
+      id: 1
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 3
+        - 5
+        - 8
+    '2':
+      id: 2
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 3
+        - 5
+        - 8
+    '3':
+      id: 3
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 5
+        - 8
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 2
+    - 3
+    - 5
+    - 8
+  color_scheme: ''
+  label_colors:
+    NO_MATCH: '#f00'
+    MATCHED: '#4daf4a'
+    MATCHED_THOUGH_NAMES_DIFFER: '#00e'
+    MATCHED_THOUGH_DISTANT: '#ffff33'
+    MATCHED_THOUGH_OSM_NO_NAME: '#a65628'
+    MATCHED_AMBIGUOUSLY: '#ff7f00'
+    NO_MATCH_BUT_OTHER_PLATFORM_MATCHED: '#f781bf'
+    NO_MATCH_AND_SEEMS_UNSERVED: '#bbaaaa'
+    MATCHED_THOUGH_REVERSED_DIR: '#5dbebe'
+  refresh_frequency: 0
+  expanded_slices: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  native_filter_configuration:
+  - id: NATIVE_FILTER-ACxIOpiJF
+    controlValues:
+      enableEmptyFilter: true
+      defaultToFirstItem: false
+      multiSelect: false
+      searchAllOptions: false
+      inverseSelection: false
+    name: Kreis
+    filterType: filter_select
+    targets:
+    - column:
+        name: district
+      datasetUuid: 83eb7bfb-6e52-45eb-8cd7-dc9da15916a0
+    defaultDataMask:
+      extraFormData:
+        filters:
+        - col: district
+          op: IN
+          val:
+          - de:08111
+      filterState:
+        validateMessage: false
+        validateStatus: false
+        label: de:08111
+        value:
+        - de:08111
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: "F\xFChrendes Pr\xE4fix der DHID. Die f\xFCnf numerischen Ziffern\
+      \ geben den Kreisschl\xFCssel an, \xFCber den sich Haltestellen dem Kreis zuordnen\
+      \ lassen, in dem sie liegen. Vereinzelt kam es bei der Vergabe zu Zahlendrehern,\
+      \ so dass es Sonderf\xE4lle gibt."
+    chartsInScope: []
+    tabsInScope: []
+  shared_label_colors:
+    MATCHED: '#4daf4a'
+    NO_MATCH_AND_SEEMS_UNSERVED: '#bbaaaa'
+    NO_MATCH: '#f00'
+    NO_MATCH_BUT_OTHER_PLATFORM_MATCHED: '#f781bf'
+    MATCHED_THOUGH_NAMES_DIFFER: '#00e'
+    MATCHED_THOUGH_REVERSED_DIR: '#5dbebe'
+    MATCHED_THOUGH_DISTANT: '#ffff33'
+    MATCHED_THOUGH_OSM_NO_NAME: '#a65628'
+    SUM(diff): '#1FA8C9'
+    MATCHED_AMBIGUOUSLY: '#ff7f00'
+    distance: '#454E7C'
+  color_scheme_domain: []
+version: 1.0.0

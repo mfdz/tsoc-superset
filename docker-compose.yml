@@ -4,6 +4,7 @@ services:
         context: ./superset
         dockerfile: Dockerfile
       volumes:
+        - $PWD/dashboards/:/dashboards/
         - $PWD/database/stops.db:/data/stops.db
         - $PWD/superset/superset_config.py:/app/superset_config.py
       container_name: superset-2

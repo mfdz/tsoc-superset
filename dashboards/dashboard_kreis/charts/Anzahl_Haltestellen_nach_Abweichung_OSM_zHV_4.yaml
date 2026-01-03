@@ -1,0 +1,28 @@
+slice_name: Anzahl Haltestellen nach Abweichung OSM/zHV
+description: null
+certified_by: null
+certification_details: null
+viz_type: histogram
+params:
+  datasource: 5__table
+  viz_type: histogram
+  slice_id: 5
+  all_columns_x:
+  - distance
+  adhoc_filters: []
+  row_limit: 1000
+  groupby: []
+  color_scheme: supersetColors
+  link_length: '20'
+  x_axis_label: Abweichung (Meter)
+  y_axis_label: Anzahl
+  show_legend: false
+  extra_form_data: {}
+  dashboards:
+  - 1
+  annotation_layers: []
+query_context: null
+cache_timeout: null
+uuid: 829af42e-6d27-470b-a2b0-24009a734a6c
+version: 1.0.0
+dataset_uuid: d6d0e6da-de64-4333-aac0-5d16c0f9a874

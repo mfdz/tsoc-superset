@@ -1,0 +1,48 @@
+slice_name: "Bedeutendste Ver\xE4nderungen"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 7__table
+  viz_type: table
+  slice_id: 4
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup: {}
+  all_columns:
+  - datasourceWarning: true
+    expressionType: SQL
+    label: Kreis
+    sqlExpression: district
+  - datasourceWarning: true
+    expressionType: SQL
+    label: Kategorie
+    sqlExpression: key
+  - datasourceWarning: true
+    expressionType: SQL
+    label: Vergleich zur Vorwoche
+    sqlExpression: diff
+  - positiv
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 1000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  show_cell_bars: true
+  color_pn: true
+  conditional_formatting:
+  - colorScheme: '#439066'
+    column: positiv
+    operator: None
+  extra_form_data: {}
+  dashboards: []
+  annotation_layers: []
+query_context: null
+cache_timeout: null
+uuid: ffad4926-381e-461e-8d44-b73fd2620295
+version: 1.0.0
+dataset_uuid: d5e252d8-238c-435a-97e7-b778a4ce11b9

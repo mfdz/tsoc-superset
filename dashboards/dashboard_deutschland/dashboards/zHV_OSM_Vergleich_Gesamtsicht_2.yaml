@@ -1,0 +1,208 @@
+dashboard_title: zHV/OSM Vergleich Gesamtsicht
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: 9b66fcbd-48d8-44c5-baa8-fd3ed368c48c
+position:
+  CHART-CM9rg54X1R:
+    children: []
+    id: CHART-CM9rg54X1R
+    meta:
+      chartId: 3
+      height: 50
+      sliceName: Zeitliche Entwicklung nach Kategorie
+      uuid: 1eb88654-7728-4c2f-8350-1197d81d5249
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-xWCWGgQ48K
+    type: CHART
+  CHART-bjkD4clNtC:
+    children: []
+    id: CHART-bjkD4clNtC
+    meta:
+      chartId: 6
+      height: 50
+      sliceName: "Bedeutendste Ver\xE4nderungen"
+      uuid: ffad4926-381e-461e-8d44-b73fd2620295
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-xWCWGgQ48K
+    type: CHART
+  CHART-explore-6-1:
+    children: []
+    id: CHART-explore-6-1
+    meta:
+      chartId: 7
+      height: 50
+      sliceName: Kreise mit den jeweils meisten Match-Ergebnissen nach Kategorie
+      uuid: 29f209d5-a01f-4d54-b65a-356e7f7c5f9e
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-h_AWFUuziw
+    type: CHART
+  CHART-n01b2JbuhG:
+    children: []
+    id: CHART-n01b2JbuhG
+    meta:
+      chartId: 2
+      height: 50
+      sliceName: Abgleichergebnisse nach Kategorie
+      uuid: 0ecead08-4718-4e12-be10-cebc17ff7f4c
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-Nh9sJ_jskN
+    type: CHART
+  CHART-yERg4q5xku:
+    children: []
+    id: CHART-yERg4q5xku
+    meta:
+      chartId: 1
+      height: 50
+      sliceName: "Ver\xE4nderung zur Vorwoche"
+      uuid: 933f4176-d3f2-4418-b312-0c6a9187c64b
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-xWCWGgQ48K
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-xWCWGgQ48K
+    - ROW-Nh9sJ_jskN
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: zHV/OSM Vergleich Gesamtsicht
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-Nh9sJ_jskN:
+    children:
+    - CHART-n01b2JbuhG
+    - CHART-explore-6-1
+    id: ROW-Nh9sJ_jskN
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-xWCWGgQ48K:
+    children:
+    - CHART-bjkD4clNtC
+    - CHART-CM9rg54X1R
+    - CHART-yERg4q5xku
+    id: ROW-xWCWGgQ48K
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  chart_configuration:
+    '1':
+      id: 1
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 3
+        - 4
+        - 6
+    '2':
+      id: 2
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 3
+        - 4
+        - 6
+    '3':
+      id: 3
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 4
+        - 6
+    '4':
+      id: 4
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 6
+    '6':
+      id: 6
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 6
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors:
+    NO_MATCH: '#f00'
+    MATCHED: '#4daf4a'
+    MATCHED_THOUGH_NAMES_DIFFER: '#00e'
+    MATCHED_THOUGH_DISTANT: '#ffff33'
+    MATCHED_THOUGH_OSM_NO_NAME: '#a65628'
+    MATCHED_AMBIGUOUSLY: '#ff7f00'
+    NO_MATCH_BUT_OTHER_PLATFORM_MATCHED: '#f781bf'
+    NO_MATCH_AND_SEEMS_UNSERVED: '#bbaaaa'
+    MATCHED_THOUGH_REVERSED_DIR: '#5dbebe'
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  shared_label_colors:
+    MATCHED: '#4daf4a'
+    NO_MATCH_AND_SEEMS_UNSERVED: '#bbaaaa'
+    NO_MATCH: '#f00'
+    NO_MATCH_BUT_OTHER_PLATFORM_MATCHED: '#f781bf'
+    MATCHED_AMBIGUOUSLY: '#ff7f00'
+    MATCHED_THOUGH_REVERSED_DIR: '#5dbebe'
+    MATCHED_THOUGH_NAMES_DIFFER: '#00e'
+    MATCHED_THOUGH_OSM_NO_NAME: '#a65628'
+    MATCHED_THOUGH_DISTANT: '#ffff33'
+    SUM(diff): '#1FA8C9'
+  color_scheme_domain: []
+  native_filter_configuration: []
+version: 1.0.0
