@@ -2,26 +2,27 @@ slice_name: Anzahl Haltestellen nach Abweichung OSM/zHV
 description: null
 certified_by: null
 certification_details: null
-viz_type: histogram
+viz_type: histogram_v2
 params:
   datasource: 5__table
-  viz_type: histogram
+  viz_type: histogram_v2
   slice_id: 5
-  all_columns_x:
-  - distance
-  adhoc_filters: []
-  row_limit: 1000
+  column: distance
   groupby: []
+  adhoc_filters: []
+  row_limit: 10000
+  bins: 20
   color_scheme: supersetColors
-  link_length: '20'
-  x_axis_label: Abweichung (Meter)
-  y_axis_label: Anzahl
   show_legend: false
+  x_axis_title: Abweichung (Meter)
+  x_axis_format: ',d'
+  y_axis_title: Anzahl
+  y_axis_format: SMART_NUMBER
   extra_form_data: {}
   dashboards:
   - 1
-  annotation_layers: []
-query_context: null
+query_context: '{"datasource":{"id":5,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["distance"],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[{"operation":"histogram","options":{"column":"distance","groupby":[],"bins":20}}]}],"form_data":{"datasource":"5__table","viz_type":"histogram_v2","slice_id":5,"column":"distance","groupby":[],"adhoc_filters":[],"row_limit":10000,"bins":20,"color_scheme":"supersetColors","show_legend":false,"x_axis_title":"Abweichung
+  (Meter)","x_axis_format":",d","y_axis_title":"Anzahl","y_axis_format":"SMART_NUMBER","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
 cache_timeout: null
 uuid: 829af42e-6d27-470b-a2b0-24009a734a6c
 version: 1.0.0
