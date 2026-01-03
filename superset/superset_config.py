@@ -10,8 +10,39 @@ PREVENT_UNSAFE_DB_CONNECTIONS = False
 # Requires running pybabel compile -d superset/translations
 LANGUAGES = { "de": {"flag": "de", "name": "Deutsch"}, "en": {"flag": "us", "name": "English"}}
 
-# TODO: replace for prod
-TALISMAN_ENABLED = False
+# For more information on TALISMAN setup, see https://superset.apache.org/docs/security/
+TALISMAN_ENABLED = True
+
+TALISMAN_CONFIG = {
+    "content_security_policy": {
+        "base-uri": ["'self'"],
+        "default-src": ["'self'"],
+        "img-src": [
+            "'self'",
+            "blob:",
+            "data:",
+            "https://apachesuperset.gateway.scarf.sh",
+            "https://static.scarf.sh/",
+            "ows.terrestris.de",
+            "mfdz.de",
+        ],
+        "worker-src": ["'self'", "blob:"],
+        "connect-src": [
+            "'self'",
+            "https://api.mapbox.com",
+            "https://events.mapbox.com",
+        ],
+        "object-src": "'none'",
+        "style-src": [
+            "'self'",
+            "'unsafe-inline'",
+        ],
+        "script-src": ["'self'", "'strict-dynamic'"],
+    },
+    "content_security_policy_nonce_in": ["script-src"],
+    "force_https": False,
+    "session_cookie_secure": False,
+}
 
 APP_NAME = "Dashboard DELFI zHV / OpenStreetMap Haltestellenabgleich"
 FAVICONS = [{"href": "https://mfdz.de/favicon.ico"}]
