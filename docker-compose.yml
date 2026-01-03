@@ -1,0 +1,17 @@
+services:
+  superset:
+      build:
+        context: ./superset
+        dockerfile: Dockerfile
+      volumes:
+        - $PWD/database/stops.db:/data/stops.db
+        - $PWD/superset/superset_config.py:/app/superset_config.py
+      container_name: superset-2
+      environment:
+        ADMIN_USERNAME: ${ADMIN_USERNAME:?'missing/empty'}
+        ADMIN_EMAIL: ${ADMIN_EMAIL:?'missing/empty'}
+        ADMIN_PASSWORD: ${ADMIN_PASSWORD:?'missing/empty'}
+        MAPBOX_API_KEY: ${MAPBOX_API_KEY:?'missing/empty'}
+        SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?'missing/empty'}
+      ports:
+        - '8088:8088'
