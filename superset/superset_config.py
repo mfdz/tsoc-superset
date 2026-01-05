@@ -5,7 +5,7 @@ FEATURE_FLAGS = {
 ENABLE_PROXY_FIX = True
 SECRET_KEY = "YOUR_OWN_RANDOM_GENERATED_STRING"
 
-# To allow sqlite, wee need to enable unsafe db connections
+# To allow duckdb, wee need to enable unsafe db connections
 PREVENT_UNSAFE_DB_CONNECTIONS = False
 # Requires running pybabel compile -d superset/translations
 LANGUAGES = { "de": {"flag": "de", "name": "Deutsch"}, "en": {"flag": "us", "name": "English"}}

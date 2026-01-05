@@ -4,9 +4,10 @@ description: null
 default_endpoint: null
 offset: 0
 cache_timeout: null
-schema: main
-sql: "SELECT substr(ifopt_id, 1,8) district, distance\n  FROM matches m\n  WHERE distance\
-  \ is not NULL"
+catalog: null
+schema: db.history
+sql: "SELECT substr(stop_id, 1,8) district, distance\n  FROM result.matches m\n  WHERE\
+  \ distance is not NULL"
 params: null
 template_params: null
 filter_select_enabled: true
@@ -23,7 +24,8 @@ metrics:
   description: null
   d3format: null
   currency: null
-  extra: null
+  extra:
+    warning_markdown: ''
   warning_text: null
 columns:
 - column_name: distance
@@ -37,7 +39,7 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 - column_name: district
   verbose_name: null
   is_dttm: false
@@ -49,6 +51,6 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 version: 1.0.0
-database_uuid: d6ba2162-42cf-426e-bcae-7e913b25908c
+database_uuid: f0d6322e-124a-42ee-ab8e-1467eca914b9

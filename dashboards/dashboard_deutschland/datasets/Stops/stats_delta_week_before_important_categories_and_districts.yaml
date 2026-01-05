@@ -1,12 +1,23 @@
-table_name: stats_by_category_and_run
+table_name: stats_delta_week_before_important_categories_and_districts
 main_dttm_col: null
 description: null
 default_endpoint: null
 offset: 0
 cache_timeout: null
-schema: main
-sql: "SELECT substr(md.value, 1,10) Datum, m.*\n  FROM match_stats m \n  JOIN match_meta_data\
-  \ md ON m.run_id = md.run_id\n  WHERE md.key='match_timestamp'"
+catalog: null
+schema: db.history
+sql: "SELECT * FROM \n  (SELECT * FROM (\n    SELECT l.key, l.district, l.value -\
+  \ bl.value diff, CASE WHEN l.key='MATCHED' THEN sign(l.value - bl.value) ELSE -1\
+  \ * sign(l.value - bl.value) END positiv\n      FROM history.match_stats l\n   \
+  \   JOIN history.match_stats bl ON l.run_id=bl.run_id+1 AND l.key=bl.key AND l.district=bl.district\n\
+  \      WHERE l.run_id = (SELECT MAX(run_id) FROM history.match_stats)\n    ) ORDER\
+  \ BY diff DESC, key, district  LIMIt 5\n  )\nUNION ALL\nSELECT * FROM \n  (SELECT\
+  \ * FROM (\n    SELECT l.key, l.district, l.value - bl.value diff, CASE WHEN l.key='MATCHED'\
+  \ THEN sign(l.value - bl.value) ELSE -1 * sign(l.value - bl.value) END positiv\n\
+  \      FROM history.match_stats l\n      JOIN history.match_stats bl ON l.run_id=bl.run_id+1\
+  \ AND l.key=bl.key AND l.district=bl.district\n      WHERE l.run_id = (SELECT MAX(run_id)\
+  \ FROM history.match_stats)\n    ) ORDER BY diff, key, district  LIMIt 5\n  )\n\
+  ORDER BY diff DESC"
 params: null
 template_params: null
 filter_select_enabled: true
@@ -14,7 +25,7 @@ fetch_values_predicate: null
 extra: null
 normalize_columns: false
 always_filter_main_dttm: false
-uuid: 45725afa-9c7c-4f33-bb8d-302dfb1dfa4a
+uuid: d5e252d8-238c-435a-97e7-b778a4ce11b9
 metrics:
 - metric_name: count
   verbose_name: COUNT(*)
@@ -27,19 +38,6 @@ metrics:
     warning_markdown: ''
   warning_text: null
 columns:
-- column_name: Datum
-  verbose_name: null
-  is_dttm: true
-  is_active: true
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra:
-    warning_markdown: null
 - column_name: district
   verbose_name: null
   is_dttm: false
@@ -51,8 +49,7 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra:
-    warning_markdown: null
+  extra: {}
 - column_name: key
   verbose_name: null
   is_dttm: false
@@ -64,9 +61,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra:
-    warning_markdown: null
-- column_name: run_id
+  extra: {}
+- column_name: diff
   verbose_name: null
   is_dttm: false
   is_active: true
@@ -77,9 +73,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra:
-    warning_markdown: null
-- column_name: value
+  extra: {}
+- column_name: positiv
   verbose_name: null
   is_dttm: false
   is_active: true
@@ -90,7 +85,6 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra:
-    warning_markdown: null
+  extra: {}
 version: 1.0.0
-database_uuid: d6ba2162-42cf-426e-bcae-7e913b25908c
+database_uuid: f0d6322e-124a-42ee-ab8e-1467eca914b9

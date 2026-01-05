@@ -1,17 +1,17 @@
 dashboard_title: zHV/OSM Vergleich Kreisebene
 description: null
 css: ''
-slug: null
+slug: kreis
 certified_by: ''
 certification_details: ''
-published: false
+published: true
 uuid: 99655f62-afea-4618-bf55-41c09fef71b4
 position:
   CHART-eEXRC55aXc:
     children: []
     id: CHART-eEXRC55aXc
     meta:
-      chartId: 1
+      chartId: 4
       height: 50
       sliceName: "Ver\xE4nderung zur Vorwoche"
       uuid: 933f4176-d3f2-4418-b312-0c6a9187c64b
@@ -53,7 +53,7 @@ position:
     children: []
     id: CHART-explore-5-1
     meta:
-      chartId: 4
+      chartId: 5
       height: 50
       sliceName: Anzahl Haltestellen nach Abweichung OSM/zHV
       uuid: 829af42e-6d27-470b-a2b0-24009a734a6c
@@ -67,7 +67,7 @@ position:
     children: []
     id: CHART-explore-8-1
     meta:
-      chartId: 5
+      chartId: 1
       height: 50
       sliceName: Karte der Matchergebnisse
       uuid: 20d00306-309f-4185-b56f-f8a9618ef321
@@ -75,13 +75,14 @@ position:
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-SIqicEk8nH
+    - ROW-pcoTCriaoa
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
     - ROW-pcoTCriaoa
     - ROW-cbxxaGAA13
+    - ROW-KJ7BxOfYuBf4h-aQBD43I
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -91,11 +92,35 @@ position:
     meta:
       text: zHV/OSM Vergleich Kreisebene
     type: HEADER
+  MARKDOWN-zRUbNz8010ZGir3zYwn4V:
+    children: []
+    id: MARKDOWN-zRUbNz8010ZGir3zYwn4V
+    meta:
+      code: "Daten: [DELFI e.V.](https://delfi.de), [OpenStreetMap Mitwirkende](https://osm.org).\
+        \ Auswertung: [MITFAHR|DE|ZENTRALE](https://mfdz.de) mit freundlicher Unterst\xFC\
+        tzung der [Nahverkehrsgesellschaft Baden-W\xFCrttemberg](https:www.nvbw.de)"
+      height: 8
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-KJ7BxOfYuBf4h-aQBD43I
+    type: MARKDOWN
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
+  ROW-KJ7BxOfYuBf4h-aQBD43I:
+    children:
+    - MARKDOWN-zRUbNz8010ZGir3zYwn4V
+    id: ROW-KJ7BxOfYuBf4h-aQBD43I
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
   ROW-cbxxaGAA13:
     children:
     - CHART-explore-2-1
@@ -122,15 +147,6 @@ position:
     type: ROW
 metadata:
   chart_configuration:
-    '1':
-      id: 1
-      crossFilters:
-        scope: global
-        chartsInScope:
-        - 2
-        - 3
-        - 5
-        - 8
     '2':
       id: 2
       crossFilters:
@@ -138,8 +154,8 @@ metadata:
         chartsInScope:
         - 1
         - 3
+        - 4
         - 5
-        - 8
     '3':
       id: 3
       crossFilters:
@@ -147,8 +163,17 @@ metadata:
         chartsInScope:
         - 1
         - 2
+        - 4
         - 5
-        - 8
+    '4':
+      id: 4
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 5
   global_chart_configuration:
     scope:
       rootPath:
@@ -158,8 +183,8 @@ metadata:
     - 1
     - 2
     - 3
+    - 4
     - 5
-    - 8
   color_scheme: ''
   label_colors:
     NO_MATCH: '#f00'
@@ -215,16 +240,18 @@ metadata:
     chartsInScope: []
     tabsInScope: []
   shared_label_colors:
-    MATCHED: '#4daf4a'
-    NO_MATCH_AND_SEEMS_UNSERVED: '#bbaaaa'
-    NO_MATCH: '#f00'
-    NO_MATCH_BUT_OTHER_PLATFORM_MATCHED: '#f781bf'
-    MATCHED_THOUGH_NAMES_DIFFER: '#00e'
-    MATCHED_THOUGH_REVERSED_DIR: '#5dbebe'
-    MATCHED_THOUGH_DISTANT: '#ffff33'
-    MATCHED_THOUGH_OSM_NO_NAME: '#a65628'
+  - MATCHED
+  - MATCHED_AMBIGUOUSLY
+  - MATCHED_THOUGH_DISTANT
+  - MATCHED_THOUGH_NAMES_DIFFER
+  - MATCHED_THOUGH_OSM_NO_NAME
+  - MATCHED_THOUGH_REVERSED_DIR
+  - NO_MATCH
+  - NO_MATCH_AND_SEEMS_UNSERVED
+  - NO_MATCH_BUT_OTHER_PLATFORM_MATCHED
+  map_label_colors:
     SUM(diff): '#1FA8C9'
-    MATCHED_AMBIGUOUSLY: '#ff7f00'
-    distance: '#454E7C'
+    distance: '#1FA8C9'
   color_scheme_domain: []
+  default_filters: '{}'
 version: 1.0.0

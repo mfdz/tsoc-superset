@@ -1,0 +1,17 @@
+database_name: Stops
+sqlalchemy_uri: duckdb:////data/db.db
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: false
+extra:
+  metadata_params: {}
+  engine_params: {}
+  metadata_cache_timeout: {}
+  schemas_allowed_for_file_upload: []
+impersonate_user: false
+uuid: f0d6322e-124a-42ee-ab8e-1467eca914b9
+version: 1.0.0
