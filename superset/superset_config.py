@@ -5,6 +5,10 @@ FEATURE_FLAGS = {
 ENABLE_PROXY_FIX = True
 SECRET_KEY = "YOUR_OWN_RANDOM_GENERATED_STRING"
 
+# Grant Public Role the right to view dashboards.
+# Note: This still requires (currently manually) granting database access to user Public
+PUBLIC_ROLE_LIKE = "Guest_template"
+
 # To allow duckdb, wee need to enable unsafe db connections
 PREVENT_UNSAFE_DB_CONNECTIONS = False
 # Requires running pybabel compile -d superset/translations

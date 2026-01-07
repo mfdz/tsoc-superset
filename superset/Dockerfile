@@ -17,5 +17,7 @@ RUN chmod 0755 /superset-init.sh
 COPY superset_config.py /app/
 ENV SUPERSET_CONFIG_PATH=/app/superset_config.py
 
+COPY stops_custom_roles.json /app/config/stops_custom_roles.json
+
 USER superset
 ENTRYPOINT [ "/superset-init.sh" ]
