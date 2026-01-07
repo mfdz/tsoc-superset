@@ -25,6 +25,7 @@ TALISMAN_CONFIG = {
             "https://static.scarf.sh/",
             "ows.terrestris.de",
             "mfdz.de",
+            "data.mfdz.de",
         ],
         "worker-src": ["'self'", "blob:"],
         "connect-src": [
@@ -43,7 +44,23 @@ TALISMAN_CONFIG = {
     "force_https": False,
     "session_cookie_secure": False,
 }
-
+THEME_DEFAULT = {
+    "token": {
+        "fontFamily": "'Inter', Helvetica, Arial",
+        "brandLogoUrl" : "https://mfdz.de/media/site/3469423397-1603810793/schriftzug-path-lg.svg",
+        # ... other tokens
+    },
+    # ... other theme properties
+}
+THEME_DARK = {
+    "algorithm": "dark",
+    "token": {
+        "fontFamily": "'Inter', Helvetica, Arial",
+        "brandLogoUrl" : "https://data.mfdz.de/img/mitfahrdezentrale-weiss.svg",
+        # ... other tokens
+    },
+    # ... other theme properties
+}
 APP_NAME = "Dashboard DELFI zHV / OpenStreetMap Haltestellenabgleich"
 FAVICONS = [{"href": "https://mfdz.de/favicon.ico"}]
-APP_ICON = "https://mfdz.de/media/site/3469423397-1603810793/schriftzug-path-lg.svg"
+
