@@ -7,7 +7,7 @@ services:
         - $PWD/dashboards/:/dashboards/
         - $PWD/superset_home/:/app/superset_home/
         - $PWD/database/db_de.db:/data/db.db
-        - $PWD/superset/superset_config.py:/app/superset_config.py
+        - $PWD/superset/superset_config.py:/app/superset_config.py:ro
       container_name: stops-superset
       environment:
         ADMIN_USERNAME: ${ADMIN_USERNAME:?'missing/empty'}
