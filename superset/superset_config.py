@@ -68,3 +68,5 @@ THEME_DARK = {
 APP_NAME = "Dashboard DELFI zHV / OpenStreetMap Haltestellenabgleich"
 FAVICONS = [{"href": "https://mfdz.de/favicon.ico"}]
 
+BABEL_DEFAULT_LOCALE = "de"
+
