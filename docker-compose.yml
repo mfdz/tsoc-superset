@@ -15,5 +15,6 @@ services:
         ADMIN_PASSWORD: ${ADMIN_PASSWORD:?'missing/empty'}
         MAPBOX_API_KEY: ${MAPBOX_API_KEY:?'missing/empty'}
         SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?'missing/empty'}
+        SCARF_ANALYTICS: False
       ports:
         - '8088:8088'
